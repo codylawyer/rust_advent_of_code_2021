@@ -31,13 +31,13 @@ pub fn part_1(input: &Vec<Command>) -> i32 {
     for idx in 0..input.len() {
         let current_command = &input[idx];
         let current_direction = &current_command.direction;
-	    let current_amount = &current_command.amount;
-	
-	    match current_direction {
-		    Direction::Forward 	=> horizontal_position += current_amount,
-		    Direction::Down 	=> depth += current_amount,
-		    Direction::Up 		=> depth += -current_amount,
-	    }
+        let current_amount = &current_command.amount;
+
+        match current_direction {
+            Direction::Forward 	=> horizontal_position += current_amount,
+            Direction::Down 	=> depth += current_amount,
+            Direction::Up 		=> depth += -current_amount,
+        }
     }
 
     horizontal_position*depth
@@ -51,16 +51,16 @@ pub fn part_2(input: &Vec<Command>) -> i32 {
     for idx in 0..input.len() {
         let current_command = &input[idx];
         let current_direction = &current_command.direction;
-	    let current_amount = &current_command.amount;
-	
-	    match current_direction {
-		    Direction::Forward 	=>  {
-						                horizontal_position += current_amount;
-						                depth += aim*current_amount;
-					                },
-		    Direction::Down 	=> aim += current_amount,
-		    Direction::Up 		=> aim += -current_amount,
-	    }
+        let current_amount = &current_command.amount;
+
+        match current_direction {
+            Direction::Forward 	=>  {
+                horizontal_position += current_amount;
+                depth += aim*current_amount;
+            },
+            Direction::Down 	=> aim += current_amount,
+            Direction::Up 		=> aim += -current_amount,
+        }
     }
 
     horizontal_position*depth
