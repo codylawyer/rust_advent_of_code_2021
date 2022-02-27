@@ -12,18 +12,17 @@ fn main() {
 
     match day {
         1 => {
-                // convert to vector of ints
-                let input = utils::read_to_ints(&filename);
-                println!("{}",day_1::part_1(&input));
-                println!("{}",day_1::part_2(&input));
+            // convert to vector of ints
+            let input = utils::read_to_ints(&filename);
+            println!("{}",day_1::part_1(&input));
+            println!("{}",day_1::part_2(&input));
         }
         2 => {
-                // convert to vector of commands
-                let input = utils::day_2_read(&filename);
-                println!("{}",day_2::part_1(&input));
-                //println!("{}",day_1::part_2(&input));
+            // convert to vector of commands
+            let input = utils::day_2_read(&filename);
+            println!("{}",day_2::part_1(&input));
+            println!("{}",day_2::part_2(&input));
         }
-
         _ => ()
     }
 }
