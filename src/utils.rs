@@ -45,3 +45,28 @@ pub fn day_2_read(filename: &str) -> Vec<day_2::Command> {
     // return the vector of commands
     output
 }
+
+pub fn day_3_read(filename: &str) -> (Vec<i32>,usize) {
+    // Open the file in read-only mode (ignoring errors).
+    let file = File::open(filename).unwrap();
+    let reader = BufReader::new(file);
+
+    // Initialize vector
+    let mut output = Vec::new();
+    let mut num_bits: usize = 0;
+
+    // Read the file line by line using the lines() iterator from std::io::BufRead.
+    for line in reader.lines() {
+        let line = line.unwrap(); // Ignore errors.
+        if !line.is_empty() {
+            output.push(i32::from_str_radix(&line,2).unwrap());
+
+            if num_bits < 1 {
+                num_bits = line.len();
+            }
+        }
+    }
+
+    // return the vector of i32 and num bits
+    (output, num_bits)
+}

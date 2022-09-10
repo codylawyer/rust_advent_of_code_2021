@@ -1,5 +1,6 @@
 mod day_1;
 mod day_2;
+mod day_3;
 mod utils;
 
 use std::env;
@@ -22,6 +23,12 @@ fn main() {
             let input = utils::day_2_read(&filename);
             println!("{}",day_2::part_1(&input));
             println!("{}",day_2::part_2(&input));
+        }
+        3 => {
+            // convert to vector of strings
+            let (input,num_bits) = utils::day_3_read(&filename);
+            println!("{:?}",day_3::part_1(&input,num_bits));
+            //println!("{}",day_3::part_2(&input));
         }
         _ => ()
     }
