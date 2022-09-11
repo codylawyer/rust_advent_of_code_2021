@@ -1,6 +1,6 @@
+use crate::day_2;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
-use crate::day_2;
 
 pub fn read_to_ints(filename: &str) -> Vec<i32> {
     // Open the file in read-only mode (ignoring errors).
@@ -46,7 +46,7 @@ pub fn day_2_read(filename: &str) -> Vec<day_2::Command> {
     output
 }
 
-pub fn day_3_read(filename: &str) -> (Vec<i32>,usize) {
+pub fn day_3_read(filename: &str) -> (Vec<i32>, usize) {
     // Open the file in read-only mode (ignoring errors).
     let file = File::open(filename).unwrap();
     let reader = BufReader::new(file);
@@ -59,7 +59,7 @@ pub fn day_3_read(filename: &str) -> (Vec<i32>,usize) {
     for line in reader.lines() {
         let line = line.unwrap(); // Ignore errors.
         if !line.is_empty() {
-            output.push(i32::from_str_radix(&line,2).unwrap());
+            output.push(i32::from_str_radix(&line, 2).unwrap());
 
             if num_bits < 1 {
                 num_bits = line.len();
